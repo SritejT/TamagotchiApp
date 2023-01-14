@@ -14,6 +14,7 @@
 		2B75674D2972C06600AD53BC /* TamagotchiAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B75674C2972C06600AD53BC /* TamagotchiAppTests.swift */; };
 		2B7567572972C06600AD53BC /* TamagotchiAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7567562972C06600AD53BC /* TamagotchiAppUITests.swift */; };
 		2B7567592972C06600AD53BC /* TamagotchiAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7567582972C06600AD53BC /* TamagotchiAppUITestsLaunchTests.swift */; };
+		2B7567662972C0BB00AD53BC /* Tamagotchi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7567652972C0BB00AD53BC /* Tamagotchi.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		2B7567522972C06600AD53BC /* TamagotchiAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TamagotchiAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B7567562972C06600AD53BC /* TamagotchiAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TamagotchiAppUITests.swift; sourceTree = "<group>"; };
 		2B7567582972C06600AD53BC /* TamagotchiAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TamagotchiAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		2B7567652972C0BB00AD53BC /* Tamagotchi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tamagotchi.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 				2B75673D2972C06400AD53BC /* ContentView.swift */,
 				2B75673F2972C06500AD53BC /* Assets.xcassets */,
 				2B7567412972C06500AD53BC /* Preview Content */,
+				2B7567652972C0BB00AD53BC /* Tamagotchi.swift */,
 			);
 			path = TamagotchiApp;
 			sourceTree = "<group>";
@@ -259,6 +262,7 @@
 			files = (
 				2B75673E2972C06400AD53BC /* ContentView.swift in Sources */,
 				2B75673C2972C06400AD53BC /* TamagotchiAppApp.swift in Sources */,
+				2B7567662972C0BB00AD53BC /* Tamagotchi.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
