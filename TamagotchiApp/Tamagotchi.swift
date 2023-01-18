@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Tamagotchi {
+struct Tamagotchi {
     
     var hunger: Int
     var health: Int
@@ -37,5 +37,18 @@ class Tamagotchi {
                Name: \(self.name)
                Weight: \(self.weight)
                """
+    }
+    
+    mutating func eatSnack() {
+        if self.hunger >= 10 {
+            self.hunger -= 10
+        }
+    }
+    
+    mutating func eatMeal() {
+        if self.hunger >= 25 {
+            self.hunger -= 25
+        }
+        self.weight += 3
     }
 }
