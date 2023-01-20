@@ -51,4 +51,16 @@ struct Tamagotchi {
         }
         self.weight += 3
     }
+    
+    mutating func increaseAge() {
+        self.age += 1
+    }
+    
+    mutating func increaseHunger() {
+        self.hunger += 1
+    }
+    
+    mutating func changeName(newName: String) {
+        self.name = newName
+    }
 }
