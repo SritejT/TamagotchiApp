@@ -11,9 +11,16 @@ struct ContentView: View {
     
     @State private var tamagotchi = Tamagotchi(hunger: 50, health: 100, happiness: 100, age: 0, sickness: 0, name: "First Tamagotchi", weight: 10)
     
+    @State private var remainingTime: Int = 30 {
+        didSet {
+            
+        }
+    }
+    
     var body: some View {
 
         VStack(alignment: .leading, spacing: 20) {
+            
             Text(tamagotchi.displayStats())
                 .padding()
             
