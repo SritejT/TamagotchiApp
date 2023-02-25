@@ -12,6 +12,7 @@ struct TamagotchiAppApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(Tamagotchi(hunger: 50, health: 100, happiness: 50, age: 0, name: "", weight: 10))
         }
     }
 }

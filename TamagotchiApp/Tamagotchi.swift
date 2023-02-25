@@ -7,60 +7,91 @@
 
 import Foundation
 
-struct Tamagotchi {
+class Tamagotchi: ObservableObject {
     
-    var hunger: Int
-    var health: Int
-    var happiness: Int
-    var age: Int
-    var sickness: Int
-    var name: String
-    var weight: Int
+    @Published var hunger: Int
+    @Published var health: Int
+    @Published var happiness: Int
+    @Published var age: Int
+    @Published var isSick: Bool
+    @Published var name: String
+    @Published var weight: Int
     
-    init(hunger: Int, health: Int, happiness: Int, age: Int, sickness: Int, name: String, weight: Int) {
+    init(hunger: Int, health: Int, happiness: Int, age: Int, name: String, weight: Int) {
         self.hunger = hunger
         self.health = health
         self.happiness = happiness
         self.age = age
-        self.sickness = sickness
+        self.isSick = false
         self.name = name
         self.weight = weight
     }
     
-    func displayStats() -> String {
-        return """
-               Hunger: \(self.hunger)
-               Health: \(self.health)
-               Happiness: \(self.happiness)
-               Age: \(self.age)
-               Sickness: \(self.sickness)
-               Name: \(self.name)
-               Weight: \(self.weight)
-               """
-    }
-    
-    mutating func eatSnack() {
+    func eatSnack() {
         if self.hunger >= 10 {
             self.hunger -= 10
         }
     }
     
-    mutating func eatMeal() {
+    func eatMeal() {
         if self.hunger >= 25 {
             self.hunger -= 25
         }
         self.weight += 3
+        self.happiness += 10
     }
     
-    mutating func increaseAge() {
+    func increaseAge() {
         self.age += 1
     }
     
-    mutating func increaseHunger() {
+    func increaseHunger() {
         self.hunger += 1
     }
     
-    mutating func changeName(newName: String) {
+    func changeName(newName: String) {
         self.name = newName
+    }
+    
+    func makeSick() {
+        self.isSick = true
+        self.hunger = 10
+        self.happiness = 10
+    }
+    
+    func cureSickness() {
+        self.isSick = false
+    }
+    
+    func sicknessTick() {
+        self.happiness -= 1
+        self.hunger -= 1
+        self.health -= 3
+    }
+    
+    func giveMedicine() {
+        self.happiness += 10
+        self.hunger += 20
+        self.health += 20
+    }
+    
+    func playGame(move: Int) {
+        
+        let tamagotchiMove = Int.random(in: 1...50)
+        if move > tamagotchiMove {
+            self.happiness += 20
+        } else if move < tamagotchiMove {
+            self.happiness += 10
+        } else {
+            self.happiness += 30
+        }
+    }
+    
+    func checkIfDead() -> Bool {
+        if hunger > 100 || health < 0 || age > 15 || happiness < 0 {
+            return true
+        } else {
+            return false
+        }
     }
 }
